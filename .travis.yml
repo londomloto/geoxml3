@@ -21,7 +21,7 @@ notifications:
 install:
   - >
     npm install jshint --save-dev;
-    git checkout composer.json;
+    git checkout package.json;
 
 script:
 - >
