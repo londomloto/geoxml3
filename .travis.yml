@@ -20,8 +20,7 @@ notifications:
 
 install:
   - >
-    npm install jshint@2.6.0 --save-dev;
-    git checkout package.json;
+    npm install;
 
 script:
 - >
