@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = google = {
   maps: {
     //https://developers.google.com/maps/documentation/javascript/reference#Animation
     Animation: {},
