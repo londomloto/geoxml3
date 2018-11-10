@@ -37,6 +37,14 @@ jobs:
         echo "Running javascript hint";
         jshint lib/
 
+  - stage: test
+    before_install: skip
+    before_script: skip
+    script:
+      - |
+        echo "Running mocha tests";
+        mocha --async-only
+
   - stage: publish in npmjs.org
     if: tag IS present
     before_install: skip
