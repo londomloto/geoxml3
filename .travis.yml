@@ -20,7 +20,7 @@ notifications:
 
 install:
   - >
-    npm install jshint --save-dev;
+    npm install jshint@2.6.0 --save-dev;
     git checkout package.json;
 
 script:
@@ -35,7 +35,7 @@ jobs:
     before_script: skip
     script:
     - echo "Running php lint";
-      errors=$(find . -name \*.php ! -path "./.Build/*" -exec php -d display_errors=stderr -l {} 2>&1 >/dev/null \;) && echo "$errors" && test -z "$errors"
+      ./node_modules/jshint/bin/jshint lib/
 
   - stage: publish in npmjs.org
     if: tag IS present
