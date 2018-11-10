@@ -18,11 +18,6 @@ notifications:
   email:
   - npmjs@evoweb.de
 
-install:
-  - >
-    npm install jshint@2.6.0 --save-dev;
-    git checkout package.json;
-
 script:
 - >
   echo "No tests implemented";
@@ -30,22 +25,22 @@ script:
 jobs:
   include:
   - stage: test
-    env: TASK="JavaScript Lint"
-    before_install: skip
-    before_script: skip
-    script:
-    - echo "Running javascript hint";
-      ./node_modules/jshint/bin/jshint lib/
-
-  - stage: publish in npmjs.org
-    if: tag IS present
-    php: 7.0
     before_install: skip
     install: skip
     before_script: skip
     script:
-    - |
-      if [ -n "$NPM_TOKEN" ]; then
-        echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-        npm publish
-      fi;
+      - |
+        echo "Running javascript hint";
+        jshint lib/
+
+  - stage: publish in npmjs.org
+    if: tag IS present
+    before_install: skip
+    install: skip
+    before_script: skip
+    script:
+      - |
+        if [ -n "$NPM_TOKEN" ]; then
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+          npm publish
+        fi;

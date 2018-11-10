@@ -5,13 +5,17 @@
   "author": "Sebastian Fischer <js@evoweb.de>",
   "license": "GPL-2.0-or-later",
   "version": "1.0.0",
+  "homepage": "https://github.com/evoWeb/geoxml3",
   "repository": {
     "type": "git",
     "url": "https://github.com/evoWeb/geoxml3.git"
   },
-  "homepage": "https://github.com/evoWeb/geoxml3",
+  "devDependencies": {
+    "jshint": "^2.9.6",
+    "mocha": "^5.2.0"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --async-only"
   }
 }
