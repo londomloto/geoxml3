@@ -18,6 +18,11 @@ notifications:
   email:
   - npmjs@evoweb.de
 
+install:
+  - >
+    npm install jshint@2.6.0 --save-dev;
+    git checkout package.json;
+
 script:
 - >
   echo "No tests implemented";
@@ -26,7 +31,6 @@ jobs:
   include:
   - stage: test
     before_install: skip
-    install: skip
     before_script: skip
     script:
       - |
