@@ -6,11 +6,12 @@ const assert = require('assert'),
 global.window = require(path.resolve(path.join(__dirname, 'fixtures/window')));
 global.google = require(path.resolve(path.join(__dirname, 'fixtures/google')));
 
-var geoxml3 = require('../lib/geoxml3');
-
+var MultiGeometry = require('../lib/MultiGeometry');
+var GeoXML3 = require('../lib/GeoXML3');
+console.log(GeoXML3);
 describe('geoXML3', function () {
   it('should create an object', function (done) {
-    assert.equal(typeof geoxml3, 'object');
+    assert.equal(typeof GeoXML3, 'object');
     done();
   });
 });

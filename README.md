@@ -21,12 +21,12 @@ Project was forked from https://github.com/geocodezip/geoxml3 to refactor it.
 
 **Basic Usage**
 
-1. Download  geoxml3.js  to your web site from the Source tab above. You may also need  ProjectedOverlay.js  and/or  ZipFile.complete.js  (see above).
+1. Download  GeoXML3.js  to your web site from the Source tab above. You may also need  ProjectedOverlay.js  and/or  ZipFile.complete.js  (see above).
 
 2. Include it in your map page, something like this:
 
 ````javascript
-  <script src="geoxml3.js"></script>
+  <script src="GeoXML3.js"></script>
 ````
 
 3. Instantiate and initialize the object in JS, something like this:

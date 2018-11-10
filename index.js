@@ -1,1 +1,4 @@
-module.exports = require('./lib/geoxml3');
+module.exports = {
+  MultiGeometry: require('./lib/MultiGeometry'),
+  GeoXML3: require('./lib/GeoXML3')
+};
