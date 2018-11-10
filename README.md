@@ -1,29 +1,13 @@
-# geoxml3
+JavaScript Module ``geoxml3`` [![Build Status](https://travis-ci.org/evoWeb/geoxml3.svg?branch=master)](https://travis-ci.org/evoWeb/geoxml3)
+=================
+
 The geoxml3 project is an effort to develop a KML processor for use with Version 3 of the Google Maps JavaScript API. This API is specifically designed to be lightweight and modular; accordingly, it did not originally contain the built-in KML support of Version 2. This library was originally intended to fill that need; as KML support has been added natively in Version 3, it now allows access to individual markers, polylines and polygons, rendered from KML. (Automatically exported from code.google.com/p/geoxml3
 )
 
 Original code inspired by Mike Williams' EGeoXml object (http://econym.org.uk/gmap/egeoxml.htm).
 
-**History**
-
-<ul>
-<li>trunk - (old, not currently maintained) original version
-<li>network_link branch - (old, not currently maintained) development branch for network link functionality, not well tested
-<li>polys branch - development branch for polylines, polygons, current active development branch. Supports polylines, polygons, markers and groundoverlays
-<li>kmz branch - development branch for kmz support, built off of the polys branch. Supports external styles, and is more standards compliant. See issue 53 for details (http://code.google.com/p/geoxml3/issues/detail?id=53) and current status.
-</ul>
-
-**Statistics (3/16/2012)**
-
-| branch|size(bytes)|size(lines)|notes|
-|-----|-----------|---------|--------------------|
-|trunk | 14960 bytes | 442 lines | old, not maintained|
-|polys | 39099 bytes | 1094 lines | current| 
-|kmz | 70967 bytes | 1855 lines | current |
-|groundoverlays require:    |
-|ProjectedOverlay.js |4165 bytes |138 lines||  
-|kmz files require unzip support:    |
-|ZipFile.complete.js | 75527 bytes | 2300 lines||  
+**Refactoring efford**
+Project was forked from https://github.com/geocodezip/geoxml3 to refactor it.
 
 **General Notes**
 <ul>
@@ -42,12 +26,12 @@ Original code inspired by Mike Williams' EGeoXml object (http://econym.org.uk/gm
 2. Include it in your map page, something like this:
 
 ````javascript
-<script src="geoxml3.js"></script>
+  <script src="geoxml3.js"></script>
 ````
 
 3. Instantiate and initialize the object in JS, something like this:
 
 ````javascript
-var myParser = new geoXML3.parser({map: map});
-myParser.parse('/path/to/data.kml');
+  var myParser = new geoXML3.parser({map: map});
+  myParser.parse('/path/to/data.kml');
 ````

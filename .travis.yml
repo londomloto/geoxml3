@@ -1,0 +1,54 @@
+language: node_js
+node_js:
+  - "node"
+
+sudo: false
+
+branches:
+  only:
+  - master
+  - develop
+  - /^[0-9]+\.[0-9]+\.[0-9]+$/
+
+cache:
+  directories:
+  - $HOME/.composer/cache
+
+notifications:
+  email:
+  - npmjs@evoweb.de
+
+install:
+  - >
+    npm install jshint --save-dev;
+    git checkout composer.json;
+
+script:
+- >
+  echo "No tests implemented";
+
+jobs:
+  include:
+  - &lint
+    stage: test
+    php: 7.2
+    env: TASK="PHP Lint"
+    before_install: skip
+    install: skip
+    before_script: skip
+    script:
+    - echo "Running php lint";
+      errors=$(find . -name \*.php ! -path "./.Build/*" -exec php -d display_errors=stderr -l {} 2>&1 >/dev/null \;) && echo "$errors" && test -z "$errors"
+
+  - stage: publish in npmjs.org
+    if: tag IS present
+    php: 7.0
+    before_install: skip
+    install: skip
+    before_script: skip
+    script:
+    - |
+      if [ -n "$NPM_TOKEN" ]; then
+        echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+        npm publish
+      fi;
