@@ -3,12 +3,11 @@
 const assert = require('assert'),
   path = require('path');
 
-require(path.resolve(path.join(__dirname, 'fixtures/window')));
-require(path.resolve(path.join(__dirname, 'fixtures/google')));
-var window = global.window,
-  google = global.google,
-  geoxml3 = require('../lib/geoxml3');
-console.log(geoxml3);
+global.window = require(path.resolve(path.join(__dirname, 'fixtures/window')));
+global.google = require(path.resolve(path.join(__dirname, 'fixtures/google')));
+
+var geoxml3 = require('../lib/geoxml3');
+
 describe('geoXML3', function () {
   it('should create an object', function (done) {
     assert.equal(typeof geoxml3, 'object');

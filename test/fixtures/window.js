@@ -1,2 +1,2 @@
-global.window = {
+module.exports = {
 };

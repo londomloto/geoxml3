@@ -1,4 +1,4 @@
-global.google = {
+module.exports = {
   maps: {
     //https://developers.google.com/maps/documentation/javascript/reference#Animation
     Animation: {},
