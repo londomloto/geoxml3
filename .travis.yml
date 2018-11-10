@@ -29,12 +29,9 @@ script:
 
 jobs:
   include:
-  - &lint
-    stage: test
-    php: 7.2
-    env: TASK="PHP Lint"
+  - stage: test
+    env: TASK="JavaScript Lint"
     before_install: skip
-    install: skip
     before_script: skip
     script:
     - echo "Running php lint";
