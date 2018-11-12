@@ -8,7 +8,7 @@ global.google = require(path.resolve(path.join(__dirname, 'fixtures/google')));
 
 var MultiGeometry = require('../lib/MultiGeometry');
 var GeoXML3 = require('../lib/GeoXML3');
-console.log(GeoXML3);
+
 describe('geoXML3', function () {
   it('should create an object', function (done) {
     assert.equal(typeof GeoXML3, 'object');
